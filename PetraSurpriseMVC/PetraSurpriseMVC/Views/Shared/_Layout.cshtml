@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+  <div class="Pt-PageTopBar">
+     <div class="container-fluid">
+       <div class="row">
+           <div class="col-md-2 hidden-xs col-sm-3">
+                   <div class="cellphone">
+                       <p><span class="glyphicon glyphicon-phone"></span>0046735817885</p>
+                   </div>
+           </div>
+           <div class="col-md-1 col-xs-2 col-sm-1  col-md-offset-8 col-xs-offset-8  col-sm-offset-7 nopaddingright">
+               <div class="TopBarBeforeLastColumn-Area">
+                   <a style="float:right"><span class="glyphicon glyphicon-log-in"></span>  Login</a>
+               </div>      
+           </div>
+           <div class="col-md-1 col-xs-2 col-sm-1">
+               <div class="TopBarLastColumn-Area">
+                   <span class="glyphicon glyphicon-question-sign"></span> <a>About</a>
+               </div>
+           </div>
+
+       </div>
+    </div>
+ </div>
+  <div class="Pt-PageBelowTopBar-">
+        <div class="container-fluid">
+            <div class="row">
+                    <div class="col-xs-8 col-md-2 col-sm-5 col-md-offset-1 ">
+                         <img  class="img-responsive" src="~/Images/logoResized.png" alt="Petra">
+                    </div>
+
+                    <div class="hidden-xs  col-sm-7 col-md-6 col-md-offset-1">
+                        <div class="input-group" style="margin-top:50px;width:100%;">
+                            <input type="text" class="form-control" placeholder="Search For Gifts....." aria-label="..." style="display:inline;height:40px;" >
+                                <button class="btn" style="line-height: 22px;display:inline;">
+                                    Search <span class="glyphicon glyphicon-gift"></span>
+                                </button>
+                         </div>
+                    </div>
+                <div class="col-md-2 ">
+                    <div class="cart-Box">
+                        <a class="cart-link" href="#">
+                            <span class="cart-notify" style="margin-top:10px;">@(ViewBag.NoOfItem == null ? 0 : ViewBag.NoOfItem)</span>
+
+                            <div class="Cart" style="margin-top:15px;"><span class="glyphicon glyphicon-shopping-cart"></span></div>
+                        </a></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    @*<span class="fa fa-shopping-cart"></span>
+    <!-- / logo  -->
+    <!-- cart box -->
+    <div class="aa-cartbox">
+        <a class="aa-cart-link" href="#">
+            <span class="fa fa-shopping-basket"></span>
+            <span class="aa-cart-title">SHOPPING CART</span>
+            <span class="aa-cart-notify">@(ViewBag.NoOfItem == null ? 0 : ViewBag.NoOfItem)</span>
+        </a>
+        <div class="aa-cartbox-summary">
+            <ul>
+                @if (Session["username"] != null)
+                {
+                    Html.RenderPartial("_CartBox");
+
+                }
+            </ul>
+            <a class="aa-cartbox-checkout aa-primary-btn" href="@Url.Action("Index","CheckOut")">Checkout</a>
+        </div>
+    </div>
+    <!-- / cart box -->
+    <!-- search box -->
+    <div class="aa-search-box">
+        <form action="@Url.Action("Search","Product")" method="get">
+            <input type="text" name="product" id="searchTxtBox" placeholder="Search product here . . . ">
+            <button type="submit"><span class="fa fa-search"></span></button>
+        </form>
+    </div>*@
+
+    @*<div class="navigationmenu">
+        <div class="navbar navbar-default" style="background-color:#16a085" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav"></ul>
+                </div>
+            </div>
+        </div>
+    </div>*@
+        <div id="custom-bootstrap-menu" class="navbar navbar-default container-fluid " role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" >
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-home"></span>   Home</a></li>
+                    <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-fire"></span> Most Popular</a></li>
+                    <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-star-empty"></span> Flowers</a></li>
+                    <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-star"></span> Cakes</a></li>
+                    <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-gift"></span> For Her</a></li>
+                    <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-fire"></span> For Him</a></li>
+
+
+                    @*<li><a href="">@nav.Key<span class="caret"></span></a>
+
+                                         <ul class="dropdown-menu">
+                                             @foreach (var subNav in nav.Value)
+                                             {
+                                                 <li><a href="@Url.Action("GetProductsByCategory","Product", new { categoryName = subNav.Trim() })">@subNav.Trim()</a></li>
+                                             }
+                                         </ul>
+                        </li>*@
+                </ul>
+            </div>
+
+        </div>
+
+    <div class="container-fluid">
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+
+</body>
+</html>

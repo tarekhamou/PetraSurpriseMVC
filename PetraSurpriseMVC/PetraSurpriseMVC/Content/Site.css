@@ -1,0 +1,247 @@
+﻿body {
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 1px;
+    padding-right:1px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.nopaddingright {
+   padding-right:0px !important;
+}
+
+
+.Pt-PageTopBar  {
+  border-bottom: 1px solid #E8E8E8;
+  /*display: inline;*/
+  float: left;
+  width: 100%;
+  background-color:#ff6678;
+ 
+}
+.Pt-PageTopBar * p,a,span {
+      margin-bottom: 0px; 
+      color: #fff;
+}
+
+
+.cellphone {
+  margin-top:2px;
+
+
+}
+.cellphone p {
+  font-size: 12px;
+
+}
+.cellphone p span {
+  margin-right: 10px;
+}
+
+.MainColorBackground {
+background-color:aquamarine;}
+
+
+ 
+.btn {
+  margin: 0 auto;
+  font-size: 2.0rem;
+  padding: ;
+  display: block;
+  background-color: #094c48;
+  border: 1px solid transparent;
+  color: #ffffff;
+  font-weight: 300;
+  -webkit-border-radius: 3px;
+  border-radius:0px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+    -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height:40px;
+}
+
+.btn:hover {
+  background-color: #ffffff;
+  color: #c0392b;
+  border-color: #c0392b;
+}
+.form-control:focus,input[type="text"]:focus{  border-color:  #f76f6f;   }
+.form-control{border-color:#094c48;width:100%;}
+
+
+
+
+
+ .navbar-default {
+  background-color: #ff6678;
+  border: medium none;
+  border-radius: 0;
+  margin-bottom: 0;
+  min-height: auto;
+  
+}
+.navbar-default .navbar-nav {
+  display: inline-block;
+  float: left;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  margin-left:120px;
+}
+.navbar-default .navbar-nav li a {
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 15px;
+
+}
+.navbar-default .navbar-nav li a:hover,navbar-default .navbar-nav li a:focus {
+color:#fff;
+background-color:#f76f6f;
+}
+
+
+ .navbar-default .navbar-nav .open a {
+  background-color: #fff;
+}
+ .navbar-default .navbar-nav .dropdown-menu li a {
+  padding: 8px 15px;
+}
+.navbar-default .navbar-nav .dropdown-menu li a:hover, #menu .menu-area .navbar-default .navbar-nav .dropdown-menu li a:focus {
+  color: #fff; 
+}
+.navbar-default .navbar-nav .dropdown-menu .dropdown-header {
+  color: #555;
+  display: block;
+  font-size: 16px;
+  padding: 3px 20px;
+  text-transform: uppercase;
+}
+
+
+ .navbar-toggle {
+       border-color: #16a085;
+        background-color: #fff;
+           color:#fff;
+  }
+  
+ .avbar-toggle:hover,.navbar-toggle:focus{
+          background-color: #16a085;
+              color: #fff;
+
+
+  }
+
+ .navbar-toggle:hover .icon-bar,navbar-toggle:focus .icon-bar{
+           background-color: #16a085;
+
+   }
+
+ .Cart{
+display: inline-block;
+    background-color:#094c48;
+    margin: 15px;
+    border-radius: 50%;
+  }
+
+ .Cart .glyphicon-shopping-cart{
+ 
+           color: #fff;
+      display: table-cell;
+      vertical-align: middle; 
+      text-align: center; 
+
+      height: 100px;
+      width: 100px;  
+           font-size: 40px
+ }
+ .cart-Box{
+      float: right;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+ }
+ .cart-Link{
+       font-size: 22px;
+  position: relative;
+  width: 120px;
+  height: auto;
+  display: block;
+ }
+.cart-notify {
+  background-color: #d3929a;
+  color:#094c48;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 9px;
+  position: absolute;
+  right: 22%;
+  top: 22px;
+  z-index: 10;
+  -webkit-animation-name: cartbox-transition;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: cartbox-transition;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes cartbox-transition {
+  33.33% {
+    top: 1px;
+  }
+
+  66.66% {
+    top: 1px;
+  }
+
+  100% {
+    top: 1px;
+  }
+}
+
+@keyframes cartbox-transition {
+  33.33% {
+    top: 1px;
+  }
+
+  66.66% {
+    top: 1px;
+  }
+
+  100% {
+    top: 1px;
+  }
+}
+.cart-notify:after,.cart-notify:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.cart-notify:after {
+  border-color: rgba(255, 102, 102, 0);
+  border-width: 5px;
+  margin-left: -5px;
+}
+.cart-notify:before {
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 6px;
+  margin-left: -6px;
+}

@@ -1,0 +1,160 @@
+﻿@model  PetraSurpriseMvc.ViewModels.GiftListViewModel
+
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@using PetraSurpriseMvc.ViewModels;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-md-3 nopadding">
+            <h2>Options</h2>
+            <form action="" id="MainForm" method="post">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Collapsible Group Item #1
+                                </a>
+                            </h4>
+
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <div class="accordion-insidefilters">
+                                    <div class="checkbox checkboxlist">
+                                        @for (int idx = 0; idx < Model.SelectedCategories.Count; idx++)
+
+                                        {
+                                            <div class="checkbox checkbox-danger">
+                                                @Html.HiddenFor(x => Model.SelectedCategories[idx].Id)
+                                                @Html.CheckBoxFor(x => Model.SelectedCategories[idx].Checked, new { @class = "styled" })
+                                                @Html.DisplayFor(x => Model.SelectedCategories[idx].Name)
+                                                @Html.HiddenFor(x => Model.SelectedCategories[idx].Name)
+                                            </div>
+
+                                        }
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Collapsible Group Item #2
+                                </a>
+                            </h4>
+
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div class="checkbox checkboxlist">
+                                    @for (int idx = 0; idx < Model.SelectedThemes.Count; idx++)
+                                    {
+
+                                        @Html.HiddenFor(x => Model.SelectedThemes[idx].Id)
+                                        @Html.CheckBoxFor(x => Model.SelectedThemes[idx].Checked)
+                                        @Html.DisplayFor(x => Model.SelectedThemes[idx].Name)
+                                        @Html.HiddenFor(x => Model.SelectedThemes[idx].Name)
+                                    }
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Collapsible Group Item #3
+                                </a>
+                            </h4>
+
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div class="checkbox checkboxlist">
+                                    @for (int idx = 0; idx < Model.SelectedOccasions.Count; idx++)
+                                    {
+
+                                        @Html.HiddenFor(x => Model.SelectedOccasions[idx].Id)
+                                        @Html.CheckBoxFor(x => Model.SelectedOccasions[idx].Checked)
+                                        @Html.DisplayFor(x => Model.SelectedOccasions[idx].Name)
+                                        @Html.HiddenFor(x => Model.SelectedOccasions[idx].Name)
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Collapsible Group Item #3
+                                </a>
+                            </h4>
+
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                            <div class="panel-body">
+                                <div class="checkbox checkboxlist">
+                                    @for (int idx = 0; idx < Model.SelectedGiftsFor.Count; idx++)
+                                    {
+
+                                        @Html.HiddenFor(x => Model.SelectedGiftsFor[idx].Id)
+                                        @Html.CheckBoxFor(x => Model.SelectedGiftsFor[idx].Checked)
+                                        @Html.DisplayFor(x => Model.SelectedGiftsFor[idx].Name)
+                                        @Html.HiddenFor(x => Model.SelectedGiftsFor[idx].Name)
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div><input type="submit" value="Submit"></div>
+
+            </form>
+          </div>
+      
+          <div class="col-md-9 nopadding">
+            @{ Html.RenderPartial("List", Model.Giftlist);  }
+
+        </div>
+
+     </div>
+   
+@*@section scripts{
+    <script>
+        $(document).on("click", "#contentPager a", function () {
+            $.ajax({
+                url: $(this).attr("href"),
+                type: 'GET',
+                cache: false,
+                success: function (result) {
+                    $('#content').html(result);
+                }
+            });
+            return false;
+        });
+    </script>
+}*@
+
+    
+
+
+
